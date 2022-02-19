@@ -1,4 +1,5 @@
 // Import stylesheets
+import {Greeter} from './greeter';
 import './style.css';
 
 /*Comentando
@@ -74,6 +75,9 @@ string{return pessoa.name + "" + pessoa.lastName;
 let p ={name: "Sabrina", lastName: " Barreiros"};
 console.log(getFullName(p));
 
+
+
+//Implementando um contador
 let counter = 0;
 let intervalId = setInterval(() =>{
   counter += 1;
@@ -81,6 +85,9 @@ let intervalId = setInterval(() =>{
   counterDiv.innerHTML = 'Contador:' +counter;
 }
 ,1000);
+
+//utilizando classe externa
+let saudacao = new Greeter ("Mundo");
 
 let title: string = 'Olá, mundo!';
 let paragraph: string = 'Bla bla';
@@ -90,4 +97,12 @@ let paragraph: string = 'Bla bla';
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>${title}</h1>
 <p>${paragraph}</p>
-<div id='counterDiv'>}</div>`;
+<div id='counterDiv'>}</div><br>
+<button id='appButton' onclick="alertTsMethod()">Alertar</button>
+<div>${saudacao.getGreeting()}</div>`;
+
+//DEclarando uma função para ser invocada por um evento
+const btn = document.getElementById("appButton");
+btn?.addEventListener("click'", alertTsMethod);function alertTsMethod(this: HTMLElement, ev: Event){
+  alert("Alertando usando TypeScript");
+}
