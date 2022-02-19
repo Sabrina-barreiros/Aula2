@@ -37,14 +37,36 @@ if(myVar1 %2 == 0)
   console.log(myVar1+" é Impar");
 }
 
-
-
 //Utilizando laços e condicionais
 for(let i=1; i<=10; i++){
   if (i%2 == 0){
     console.log(i);
   }
 }
+
+//DEclarando tipos enumerados
+enum Color {Red, Green, Blue};
+let c : Color = Color.Green;
+
+enum ColorWithReferences {Red=1, Green=2, Blue=3};
+let c2: ColorWithReferences = ColorWithReferences.Green;
+
+//DEclarando any 
+let notSure: any = 42;
+notSure = "Maybe a string instead";
+notSure = false; //DEfinitivamente é booleano
+
+function aviso(): void{
+  console.log('MEnsagem de alerta!');
+}
+aviso();
+
+//Declarando funções
+function soma(n1: number, n2: number ): Number{
+  return n1+n2;
+}
+console.log(soma(21,21))
+
 let counter = 0;
 let intervalId = setInterval(() =>{
   counter += 1;
@@ -55,6 +77,7 @@ let intervalId = setInterval(() =>{
 
 let title: string = 'Olá, mundo!';
 let paragraph: string = 'Bla bla';
+
 
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
