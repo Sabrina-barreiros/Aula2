@@ -65,7 +65,14 @@ aviso();
 function soma(n1: number, n2: number ): Number{
   return n1+n2;
 }
-console.log(soma(21,21))
+console.log(soma(21,21));
+console.log(soma(1,2));
+
+function getFullName(pessoa: {name: string, lastName: string}):
+string{return pessoa.name + "" + pessoa.lastName;
+}
+let p ={name: "Sabrina", lastName: " Barreiros"};
+console.log(getFullName(p));
 
 let counter = 0;
 let intervalId = setInterval(() =>{
